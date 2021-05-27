@@ -5,10 +5,10 @@ class Estrada extends Projeto
     protected $ferroviasEstradas; 
     protected $comprimento; 
     protected $dentroProvincia;
-    public function __construct(string $nome,string $descricao, Cliente $cliente, string $orcamento, string $codigoIdentificacao, string $dataInicio, 
+    public function __construct($id,string $nome,string $descricao, Cliente $cliente, string $orcamento, string $codigoIdentificacao, string $dataInicio, 
     string $duracao, Arquiteto $arquiteto, string $percentualConformidade,string $ferroviasEstradas, string $comprimento,bool $dentroProvincia)
     {
-        parent::__construct($nome,$descricao,$cliente,$orcamento, $codigoIdentificacao, $dataInicio, 
+        parent::__construct($id,$nome,$descricao,$cliente,$orcamento, $codigoIdentificacao, $dataInicio, 
         $duracao,$arquiteto, $percentualConformidade);
         $this->ferroviasEstradas = $ferroviasEstradas;
         $this->comprimento = $comprimento;

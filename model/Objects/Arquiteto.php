@@ -3,10 +3,11 @@ require_once('Pessoa.php');
 class Arquiteto extends Pessoa
 {   
     protected $anoExperiencia;
-    function __construct(string $nome, string $sexo, int $anoExperiencia)
+    function __construct(int $id,string $nome, string $sexo,Endereco $endereco, int $anoExperiencia)
     {
-        parent::__construct($nome,$sexo);
+        parent::__construct($id,$nome,$sexo,$endereco);
         $this->anoExperiencia= $anoExperiencia;
+       
     }
 
     /**

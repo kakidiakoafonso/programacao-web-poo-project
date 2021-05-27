@@ -3,6 +3,7 @@ require_once('Arquiteto.php');
 require_once('Cliente.php');
 class Projeto
 {
+    protected $id;
     protected $nome;
     protected $descricao;
     protected $cliente;
@@ -13,9 +14,10 @@ class Projeto
     protected $arquiteto; 
     protected $percentualConformidade;
 
-    public function __construct(string $nome,string $descricao, Cliente $cliente, string $orcamento, string $codigoIdentificacao, string $dataInicio, 
+    public function __construct(int $id,string $nome,string $descricao, Cliente $cliente, string $orcamento, string $codigoIdentificacao, string $dataInicio, 
     string $duracao, Arquiteto $arquiteto, string $percentualConformidade)
     {
+        $this->id = $id;
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->cliente = $cliente;
@@ -203,6 +205,26 @@ class Projeto
     public function setPercentualConformidade($percentualConformidade)
     {
         $this->percentualConformidade = $percentualConformidade;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }

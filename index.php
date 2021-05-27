@@ -1,6 +1,92 @@
 <?php 
-define ("path", $_SERVER["DOCUMENT_ROOT"] );
-$url = $_SERVER ['REQUEST_URI'];
+
+//Dao 
+require_once('./model/data/ClienteDao.php');
+require_once('./model/data/ArquitetoDao.php');
+require_once('./model/data/EstradaDao.php');
+require_once('./model/data/PredioDao.php');
+
+
+//Objetos 
+require_once('./model/Objects/Cliente.php');
+require_once('./model/Objects/Endereco.php');
+require_once('./model/Objects/Arquiteto.php');
+require_once('./model/Objects/Estrada.php');
+require_once('./model/Objects/Predio.php');
+
+
+//Instancias
+$endereco = new Endereco("Uige","Belas","Frente ao Kero","945186405");
+$cliente = new Cliente(2,"Divina Paulina","Femenino",$endereco,true);
+$clienteDao = new ClienteDao();
+$arquitetoDao = new ArquitetoDao();
+$estradaDao = new EstradaDao();
+$predioDao = new PredioDao();
+
+
+
+//Cliente
+// $clienteDao->create($cliente);
+// $clienteDao->read();
+// $clienteDao->update($cliente);
+//$clienteDao->delete($cliente);
+
+
+//Arquiteto
+$arquiteto = new Arquiteto(2,"Elisio Bikuma","Masculino",$endereco,10);
+//$arquitetoDao->create($arquiteto);
+//$arquitetoDao->read();
+//$arquitetoDao->update($arquiteto);
+//$arquitetoDao->delete($arquiteto);
+
+
+
+//Estrada
+// $estrada =new Estrada(1,"Estrada de Luanda","Estrada de Catete",$cliente,"20 milhoes","000FR11",
+// "20/03/2022","4 meses",$arquiteto,"10%","Estrada","20 KM",false);
+// $estradaDao->create($estrada);
+//$estradaDao->read();
+//$estradaDao->update($estrada);
+//$estradaDao->delete($estrada);
+
+
+
+
+//Predio
+$predio = new Predio(2,"Toree da Liga da Justica","Lixo",$cliente,"20 milhoes","000FR11",
+"20/03/2022","4 meses",$arquiteto,"10%","Estrada",$endereco,"Escritorio");
+
+//$predioDao->create($predio);
+//var_dump($predioDao->read());
+$predioDao->update($predio);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//define ("path", $_SERVER["DOCUMENT_ROOT"] );
+//$url = $_SERVER ['REQUEST_URI'];
+
+/*
 
 //Requies
 require_once('./controller/IndexController.php');
@@ -15,6 +101,8 @@ else
     echo "Pagina nao encontrada";
 }
 
+
+*/
 
 
 

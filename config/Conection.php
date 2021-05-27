@@ -2,13 +2,12 @@
     class Conexao 
     {
         private static $conexao;
-        function getConexao()
+        public static function getConexao()
         {
             if(!isset($conexao)):
-                self::$conexao = new PDO("mysql:host=localhost;dbname=scpce","root","");
-            else:
-                return self::$conexao;
+                self::$conexao = new \PDO("mysql:host=localhost;dbname=scpce","root","");
             endif;
+            return self::$conexao;
         }
     }
 ?>

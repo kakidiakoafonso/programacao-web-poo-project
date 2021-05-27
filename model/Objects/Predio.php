@@ -5,10 +5,10 @@ class Predio extends Projeto
     protected $alturaMaxima; 
     protected $endereco; 
     protected $tipo;
-    public function __construct(string $nome,string $descricao, Cliente $cliente, string $orcamento, string $codigoIdentificacao, string $dataInicio, 
-    string $duracao, Arquiteto $arquiteto, string $percentualConformidade,string $alturaMaxima, string $endereco, string $tipo)
+    public function __construct(int $id,string $nome,string $descricao, Cliente $cliente, string $orcamento, string $codigoIdentificacao, string $dataInicio, 
+    string $duracao, Arquiteto $arquiteto, string $percentualConformidade,string $alturaMaxima, Endereco $endereco, string $tipo)
     {
-        parent::__construct($nome,$descricao,$cliente,$orcamento, $codigoIdentificacao, $dataInicio, 
+        parent::__construct($id,$nome,$descricao,$cliente,$orcamento, $codigoIdentificacao, $dataInicio, 
         $duracao,$arquiteto, $percentualConformidade);
         $this->alturaMaxima = $alturaMaxima;
         $this->endereco = $endereco;
